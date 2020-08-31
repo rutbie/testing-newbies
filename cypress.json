@@ -1,1 +1,5 @@
-{}
+{
+    "baseUrl": "https://performance-2020.herokuapp.com",
+    "viewportWidth": 1920,
+    "viewportHeight": 1200
+}
