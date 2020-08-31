@@ -3,8 +3,6 @@ import LoginPage from '../page-objects/loginPage/loginPage';
 
 const homePage = new HomePage();
 const loginPage = new LoginPage();
-const email = 'testing@newbies.com';
-const password = 'test123'
 
 describe('Home Page', () => {
     beforeEach(() => {
@@ -18,12 +16,12 @@ describe('Home Page', () => {
         homePage.clickLogInNavigationButton();
 
         loginPage.assertLogInButtonIsEnabled(false);
-        loginPage.fillEmailField(email);
-        loginPage.fillPasswordField(password);
+        loginPage.fillEmailField(Cypress.env('email'));
+        loginPage.fillPasswordField(Cypress.env('password'));
         loginPage.assertLogInButtonIsEnabled(true);
         loginPage.clickLogInSubmitButton();
 
         homePage.clickAccountNavigationButton();
-        homePage.assertEmail(email);
+        homePage.assertEmail(Cypress.env('email'));
     });
 });
